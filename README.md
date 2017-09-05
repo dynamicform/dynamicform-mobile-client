@@ -10,11 +10,11 @@ http://facebook.github.io/react-native/docs/getting-started.html
 
 ### Run
 
-> $ cd dynamicform-mobile-client
+> $ cd dynamicform-mobile-render
 
 > $ yarn install
 
-> $ yarn start
+> $ npm start
 
 Open Android emulator
 > $ react-native run-android
