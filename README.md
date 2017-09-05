@@ -6,15 +6,15 @@ http://facebook.github.io/react-native/docs/getting-started.html
 
 ### Checkout
 
-> $ git clone ssh://git@172.16.4.213:222/dynamicform/dynamicform-mobile-render.git
+> $ git clone https://github.com/dynamicform/dynamicform-mobile-client.git
 
 ### Run
 
-> $ cd dynamicform-mobile-render
+> $ cd dynamicform-mobile-client
 
 > $ yarn install
 
-> $ npm start
+> $ yarn start
 
 Open Android emulator
 > $ react-native run-android
