@@ -9,6 +9,7 @@ import _ from 'lodash';
 import {checkBoxGroupPropType} from '../../utility/propTypes';
 import {getIsCascadeElement, MapStateToProps} from '../../utility/common';
 const CheckboxItem = Checkbox.CheckboxItem;
+const ListItem=List.Item;
 
 export class QCheckBoxGroup extends React.Component {
     constructor(props) {
@@ -19,12 +20,6 @@ export class QCheckBoxGroup extends React.Component {
     }
 
     componentWillMount() {
-        const result = _.find(this.props.formDictionary.data, {'value': this.state.optionDataKey});
-        if (!_.isUndefined(result)) {
-            this.setState({
-                options: result.children
-            });
-        }
         if (this.props.isNewForm) {
             const value = this.getValue(this.props.formData);
             if (this.props.isDynamic) {
@@ -34,41 +29,40 @@ export class QCheckBoxGroup extends React.Component {
                 this.props.dispatch(initFormData(this.objectPath, value));
             }
         }
+        const option = this.selectOptions;
+        this.state.options=option;
     }
 
-    get objectKey() {
-        return this.state.name;
+    shouldComponentUpdate(nextProps, nextState) {
+        const currentValue = this.getValue(this.props.formData);
+        const nextValue = this.getValue(nextProps.formData);
+        const isCascadElement = getIsCascadeElement(nextProps.formData,this.props.formData,this.state.conditionMap);
+        return currentValue !== nextValue || nextProps.isSubmitting || isCascadElement;
+    }
+
+    get selectOptions() {
+        if (this.props.formDictionary.data && this.state.optionDataKey) {
+            const result = _.find(this.props.formDictionary.data, {'value': this.state.optionDataKey});
+            return result.children;
+        }
+        return this.state.options;
     }
 
     get objectPath() {
         return this.state.path || this.state.name;
     }
 
-    getValue(formData) {
-        if (this.props.isDynamic) {
-            const dataPosition = this.props.dataPosition;
-            const path = `${dataPosition.objectName}[${dataPosition.index}].${this.objectPath}`;
-            return _.get(formData, path);
-        } else {
-            return _.get(formData, this.objectPath);
-        }
+    get objectKey() {
+        return this.state.name;
     }
 
-    getDynamicKey() {
+    get DynamicKey() {
         if (this.props.isDynamic) {
             const dataPosition = this.props.dataPosition;
             const index = dataPosition.index;
             return `${this.objectKey}-${index}`;
         } else {
             return this.objectKey;
-        }
-    }
-
-    getRules() {
-        if (this.getHidden() === 'none' || this.getDisabled()) {
-            return [];
-        } else {
-            return this.state.rules;
         }
     }
 
@@ -88,15 +82,15 @@ export class QCheckBoxGroup extends React.Component {
         }
     }
 
-    getDisabled() {
-        if (!this.state.conditionMap || this.state.conditionMap.length == 0) {
+    get isDisabled(){
+        if(!this.state.conditionMap|| this.state.conditionMap.length == 0) {
             return this.state.disabled;
-        } else {
-            let ElementAttribute = this.state.conditionMap.map((item, index) => {
+        }else {
+            let ElementAttribute = this.state.conditionMap.map((item, index)=> {
                 let itemValue = _.get(this.props.formData, item.whichcontrol);
                 switch (item.how) {
                     case 'equal': {
-                        return item.value === itemValue && item.action === 'disabled' && item.actionValue;
+                        return itemValue && item.value === itemValue && item.action === 'disabled' && item.actionValue;
                     }
                     case 'greater': {
                         return '';
@@ -110,18 +104,27 @@ export class QCheckBoxGroup extends React.Component {
         }
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        // only render when value is changed or form is submitting
-        const currentValue = this.getValue(this.props.formData);
-        const nextValue = this.getValue(nextProps.formData);
-        let isCascadElement = getIsCascadeElement(nextProps.formData, this.props.formData, this.state.conditionMap);
-        //only render when value is changed or form is submitting
-        return currentValue !== nextValue || nextProps.isSubmitting || isCascadElement;
+    get Rules(){
+        //需要处理Hidden的处理this.isHidden==='none'||
+        if(this.isDisabled){
+            return [];
+        }else{
+            return this.state.rules;
+        }
     }
 
-    handleOnChange = (val) => {
-        const value = val;
-        if (!this.props.isDynamic) {
+    getValue(formData) {
+        if (this.props.isDynamic) {
+            const dataPosition = this.props.dataPosition;
+            const path = `${dataPosition.objectName}[${dataPosition.index}].${this.objectPath}`;
+            return _.get(formData, path);
+        } else {
+            return _.get(formData, this.objectPath);
+        }
+    }
+
+    handleOnChange = (value) => {
+        if(!this.props.isDynamic) {
             this.props.dispatch(updateFormData(this.objectPath, value));
         } else {
             const dataPosition = this.props.dataPosition;
@@ -130,48 +133,24 @@ export class QCheckBoxGroup extends React.Component {
     }
 
     render() {
-        const data = [];
-        this.state.options.map((option, index) => {
-            data.push({label: option[this.state.textField], value: option[this.state.valueField]});
+        const {getFieldDecorator} = this.props.form;
+        const options = this.state.options.map((item, index) => {
+            return (
+                <CheckboxItem key={item.value} onChange={() => this.handleOnChange(item.value)}>
+                    {item.label}
+                </CheckboxItem>
+            );
         });
-        const defaultValue = this.state.defaultvalue;
         if (!this.isHidden) {
-            return (<List>
-                {data.map(i => {
-                    let mainObject = this;
-                    function nomalDisableCheckBox() {
-                        return <CheckboxItem key={i.value} disabled onChange={() => mainObject.handleOnChange(i.value)}>
-                            {i.label}
-                        </CheckboxItem>;
-                    }
-
-                    function nomalCheckBox() {
-                        return <CheckboxItem key={i.value} onChange={() => mainObject.handleOnChange(i.value)}>
-                            {i.label}
-                        </CheckboxItem>;
-                    }
-
-                    function setDefaultDisableCheckBox() {
-                        return <CheckboxItem key={i.value} defaultChecked disabled
-                                             onChange={() => mainObject.handleOnChange(i.value)}>
-                            {i.label}
-                        </CheckboxItem>;
-                    }
-
-                    function setDefaultCheckBox() {
-                        return <CheckboxItem key={i.value} defaultChecked onChange={() => mainObject.handleOnChange(i.value)}>
-                            {i.label}
-                        </CheckboxItem>;
-                    }
-                    if (i.value == defaultValue) {
-                        return this.getDisabled() ? setDefaultDisableCheckBox():setDefaultCheckBox();
-                    } else {
-                        return this.getDisabled() ? nomalDisableCheckBox():nomalCheckBox();
-                    }
-                })}
-            </List>);
+            return (
+                <List renderHeader={() => this.state.label}>
+                    <ListItem>
+                        {options}
+                    </ListItem>
+                </List>
+            );
         } else {
-            return (<List></List>);
+            <List></List>
         }
     }
 }

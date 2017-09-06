@@ -1,4 +1,5 @@
 import React from 'react';
+import {ScrollView} from 'react-native'
 import {View,List} from 'antd-mobile';
 import {connect} from 'react-redux';
 import {attachForm, createNewForm, loadFormData, loadFormDefinition} from '../actions/formAction';
@@ -65,9 +66,12 @@ class DynamicFormRender extends React.Component {
         }
         return (
             <View>
-                <List>
-                    {renderForm}
-                </List>
+                <ScrollView>
+                    <List>
+                        {renderForm}
+                    </List>
+                </ScrollView>
+
             </View>
         );
     }
