@@ -20,7 +20,7 @@ export default class dynamicformmobile extends Component{
     return (
         <Provider store={store}>
           <DynamicForm
-              formDefinitionSrc="http://172.31.1.55:3000/api/getdefinition/yekangMobile"
+              formDefinitionSrc="http://172.31.0.81:3000/api/getdefinition/yekangMobile"
               onSuccess={this.onSuccess}
               onError={this.onError}
           />

@@ -98,9 +98,9 @@ ansi@^0.3.0, ansi@~0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/ansi/-/ansi-0.3.1.tgz#0c42d4fb17160d5a9af1e484bace1c66922c1b21"
 
-antd-mobile@^1.6.5:
-  version "1.6.5"
-  resolved "https://registry.yarnpkg.com/antd-mobile/-/antd-mobile-1.6.5.tgz#5d44f1d57a46e6517ecc306692223641b583e6f1"
+antd-mobile@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/antd-mobile/-/antd-mobile-1.4.1.tgz#37680129f82c5d782bc9ee885a5a2acf42289f18"
   dependencies:
     array-tree-filter "~1.0.0"
     babel-runtime "6.x"
@@ -116,23 +116,23 @@ antd-mobile@^1.6.5:
     rc-drawer "~0.4.9"
     rc-input-number "~3.6.0"
     rc-notification "~2.0.0"
-    rc-slider "~8.2.0"
+    rc-slider "~8.1.2"
     rc-steps "~2.5.1"
-    rc-swipeout "~1.4.6"
+    rc-swipeout "~1.3.0"
     rc-table "~5.4.0"
-    rc-tabs "~9.1.0"
+    rc-tabs "~8.0.0"
     rc-tooltip "~3.4.3"
     rc-touchable "~1.2.2"
-    react-native-camera-roll-picker "~1.2.0"
+    react-native-camera-roll-picker "~1.1.6"
     react-native-collapsible "^0.8.0"
     react-native-drawer-layout "~1.3.0"
     react-native-menu "~0.21.0"
     react-native-scrollable-tab-view "^0.7.2"
-    rmc-cascader "~4.3.4"
-    rmc-date-picker "~5.5.0"
-    rmc-list-view "~0.8.4"
-    rmc-nuka-carousel "~2.2.0"
-    rmc-picker "~4.0.1"
+    rmc-cascader "^4.1.1"
+    rmc-date-picker "^5.3.1"
+    rmc-list-view "^0.8.0"
+    rmc-nuka-carousel "^2.2.0"
+    rmc-picker "^3.8.0"
     rn-topview "~0.1.0"
     warning "^3.0.0"
 
@@ -316,6 +316,14 @@ babel-code-frame@^6.22.0:
     chalk "^1.1.0"
     esutils "^2.0.2"
     js-tokens "^3.0.0"
+
+babel-code-frame@^6.26.0:
+  version "6.26.0"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/babel-code-frame/-/babel-code-frame-6.26.0.tgz#63fd43f7dc1e3bb7ce35947db8fe369a3f58c74b"
+  dependencies:
+    chalk "^1.1.3"
+    esutils "^2.0.2"
+    js-tokens "^3.0.2"
 
 babel-core@^6.24.1, babel-core@^6.7.2:
   version "6.25.0"
@@ -864,12 +872,26 @@ babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@6.x, babel-runtime@^6.0.0, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0:
+babel-runtime@6.x, babel-runtime@^6.0.0, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0:
   version "6.23.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.23.0.tgz#0a9489f144de70efb3ce4300accdb329e2fc543b"
   dependencies:
     core-js "^2.4.0"
     regenerator-runtime "^0.10.0"
+
+babel-runtime@^6.2.0:
+  version "6.25.0"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/babel-runtime/-/babel-runtime-6.25.0.tgz#33b98eaa5d482bb01a8d1aa6b437ad2b01aec41c"
+  dependencies:
+    core-js "^2.4.0"
+    regenerator-runtime "^0.10.0"
+
+babel-runtime@^6.26.0:
+  version "6.26.0"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
+  dependencies:
+    core-js "^2.4.0"
+    regenerator-runtime "^0.11.0"
 
 babel-template@^6.24.1, babel-template@^6.25.0, babel-template@^6.3.0:
   version "6.25.0"
@@ -881,7 +903,21 @@ babel-template@^6.24.1, babel-template@^6.25.0, babel-template@^6.3.0:
     babylon "^6.17.2"
     lodash "^4.2.0"
 
-babel-traverse@^6.23.1, babel-traverse@^6.24.1, babel-traverse@^6.25.0:
+babel-traverse@^6.23.1:
+  version "6.26.0"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/babel-traverse/-/babel-traverse-6.26.0.tgz#46a9cbd7edcc62c8e5c064e2d2d8d0f4035766ee"
+  dependencies:
+    babel-code-frame "^6.26.0"
+    babel-messages "^6.23.0"
+    babel-runtime "^6.26.0"
+    babel-types "^6.26.0"
+    babylon "^6.18.0"
+    debug "^2.6.8"
+    globals "^9.18.0"
+    invariant "^2.2.2"
+    lodash "^4.17.4"
+
+babel-traverse@^6.24.1, babel-traverse@^6.25.0:
   version "6.25.0"
   resolved "https://registry.yarnpkg.com/babel-traverse/-/babel-traverse-6.25.0.tgz#2257497e2fcd19b89edc13c4c91381f9512496f1"
   dependencies:
@@ -895,7 +931,7 @@ babel-traverse@^6.23.1, babel-traverse@^6.24.1, babel-traverse@^6.25.0:
     invariant "^2.2.0"
     lodash "^4.2.0"
 
-babel-types@^6.19.0, babel-types@^6.23.0, babel-types@^6.24.1, babel-types@^6.25.0:
+babel-types@^6.19.0, babel-types@^6.24.1, babel-types@^6.25.0:
   version "6.25.0"
   resolved "https://registry.yarnpkg.com/babel-types/-/babel-types-6.25.0.tgz#70afb248d5660e5d18f811d91c8303b54134a18e"
   dependencies:
@@ -904,9 +940,22 @@ babel-types@^6.19.0, babel-types@^6.23.0, babel-types@^6.24.1, babel-types@^6.25
     lodash "^4.2.0"
     to-fast-properties "^1.0.1"
 
+babel-types@^6.23.0, babel-types@^6.26.0:
+  version "6.26.0"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/babel-types/-/babel-types-6.26.0.tgz#a3b073f94ab49eb6fa55cd65227a334380632497"
+  dependencies:
+    babel-runtime "^6.26.0"
+    esutils "^2.0.2"
+    lodash "^4.17.4"
+    to-fast-properties "^1.0.3"
+
 babylon@^6.17.0, babylon@^6.17.2:
   version "6.17.4"
   resolved "https://registry.yarnpkg.com/babylon/-/babylon-6.17.4.tgz#3e8b7402b88d22c3423e137a1577883b15ff869a"
+
+babylon@^6.18.0:
+  version "6.18.0"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
 
 balanced-match@^1.0.0:
   version "1.0.0"
@@ -1065,7 +1114,7 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1:
+chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/chalk/-/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
   dependencies:
@@ -1728,9 +1777,21 @@ fbjs-scripts@^0.7.0:
     semver "^5.1.0"
     through2 "^2.0.0"
 
-fbjs@0.8.12, fbjs@^0.8.3, fbjs@^0.8.7, fbjs@^0.8.9:
+fbjs@0.8.12, fbjs@^0.8.3, fbjs@^0.8.9:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.12.tgz#10b5d92f76d45575fd63a217d4ea02bea2f8ed04"
+  dependencies:
+    core-js "^1.0.0"
+    isomorphic-fetch "^2.1.1"
+    loose-envify "^1.0.0"
+    object-assign "^4.1.0"
+    promise "^7.1.1"
+    setimmediate "^1.0.5"
+    ua-parser-js "^0.7.9"
+
+fbjs@^0.8.7:
+  version "0.8.14"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/fbjs/-/fbjs-0.8.14.tgz#d1dbe2be254c35a91e09f31f9cd50a40b2a0ed1c"
   dependencies:
     core-js "^1.0.0"
     isomorphic-fetch "^2.1.1"
@@ -1908,7 +1969,7 @@ global@^4.3.0:
     min-document "^2.19.0"
     process "~0.5.1"
 
-globals@^9.0.0, globals@^9.17.0:
+globals@^9.0.0, globals@^9.17.0, globals@^9.18.0:
   version "9.18.0"
   resolved "https://registry.yarnpkg.com/globals/-/globals-9.18.0.tgz#aa3896b3e69b487f17e31ed2143d69a8e30c2d8a"
 
@@ -2130,7 +2191,7 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-invariant@^2.0.0, invariant@^2.2.0:
+invariant@^2.0.0, invariant@^2.2.0, invariant@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.2.tgz#9e1f56ac0acdb6bf303306f338be3b204ae60360"
   dependencies:
@@ -2331,7 +2392,7 @@ jquery@>=1.7.2:
   version "3.2.1"
   resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
-js-tokens@^3.0.0:
+js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
@@ -2833,7 +2894,7 @@ object-keys@^1.0.8:
   version "1.0.11"
   resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/object-keys/-/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
 
-object.omit@^2.0.0:
+object.omit@^2.0.0, object.omit@~2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/object.omit/-/object.omit-2.0.1.tgz#1a9c744829f39dbb858c76ca3579ae2a54ebd1fa"
   dependencies:
@@ -3104,7 +3165,15 @@ rc-align@2.x:
     prop-types "^15.5.8"
     rc-util "4.x"
 
-rc-animate@2.x, rc-animate@^2.0.2, rc-animate@^2.3.0, rc-animate@^2.3.6:
+rc-animate@2.x:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/rc-animate/-/rc-animate-2.4.0.tgz#a51b47dadf8ad9af08cddfb5b0217bfa81aee803"
+  dependencies:
+    babel-runtime "6.x"
+    css-animation "1.x"
+    prop-types "15.x"
+
+rc-animate@^2.0.2, rc-animate@^2.3.0, rc-animate@^2.3.6:
   version "2.4.1"
   resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/rc-animate/-/rc-animate-2.4.1.tgz#df3e0f56fe106afe4bf52ff408ced241c5178919"
   dependencies:
@@ -3287,6 +3356,18 @@ rc-select@~6.8.6:
     rc-util "^4.0.4"
     warning "2.x"
 
+rc-slider@~8.1.2:
+  version "8.1.5"
+  resolved "https://registry.yarnpkg.com/rc-slider/-/rc-slider-8.1.5.tgz#b8c145ba655d7e062d54928336d9f2b0738d140b"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "^2.2.5"
+    prop-types "^15.5.4"
+    rc-tooltip "^3.4.2"
+    rc-util "^4.0.4"
+    shallowequal "^1.0.1"
+    warning "^3.0.0"
+
 rc-slider@~8.2.0:
   version "8.2.0"
   resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/rc-slider/-/rc-slider-8.2.0.tgz#ae37d17144cad60e1da6eac0ee4ffcfea0b0a6e8"
@@ -3307,13 +3388,12 @@ rc-steps@~2.5.1:
     lodash.debounce "^4.0.8"
     prop-types "^15.5.7"
 
-rc-swipeout@~1.4.6:
-  version "1.4.6"
-  resolved "https://registry.yarnpkg.com/rc-swipeout/-/rc-swipeout-1.4.6.tgz#774c08e78b0da61dc2cce50a766207293ce1572b"
+rc-swipeout@~1.3.0:
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/rc-swipeout/-/rc-swipeout-1.3.7.tgz#51e15529e4881e4da9cf08f4a90b8bd11b2c9f52"
   dependencies:
     babel-runtime "6.x"
-    classnames "^2.2.5"
-    omit.js "^1.0.0"
+    object.omit "~2.0.0"
     rc-hammerjs "^0.6.6"
     react-native-swipeout "~2.1.1"
 
@@ -3337,6 +3417,17 @@ rc-table@~5.4.0:
     shallowequal "^0.2.2"
     warning "^3.0.0"
 
+rc-tabs@~8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/rc-tabs/-/rc-tabs-8.0.1.tgz#25c57c09bfe38f7ef872413635d209457069c077"
+  dependencies:
+    babel-runtime "6.x"
+    classnames "2.x"
+    create-react-class "15.x"
+    prop-types "15.x"
+    rc-hammerjs "~0.6.0"
+    warning "^3.0.0"
+
 rc-tabs@~9.0.2:
   version "9.0.3"
   resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/rc-tabs/-/rc-tabs-9.0.3.tgz#dee06aa8c71f9fe8dc6c430235e844dd6c671833"
@@ -3346,19 +3437,6 @@ rc-tabs@~9.0.2:
     create-react-class "15.x"
     prop-types "15.x"
     rc-hammerjs "~0.6.0"
-    warning "^3.0.0"
-
-rc-tabs@~9.1.0:
-  version "9.1.4"
-  resolved "https://registry.yarnpkg.com/rc-tabs/-/rc-tabs-9.1.4.tgz#ff27a644ade9d0e5a8c8f5a561ee364a6af8c5a3"
-  dependencies:
-    babel-runtime "6.x"
-    classnames "2.x"
-    create-react-class "15.x"
-    lodash.debounce "^4.0.8"
-    prop-types "15.x"
-    rc-hammerjs "~0.6.0"
-    rc-util "^4.0.4"
     warning "^3.0.0"
 
 rc-time-picker@~2.4.1:
@@ -3371,7 +3449,15 @@ rc-time-picker@~2.4.1:
     prop-types "^15.5.8"
     rc-trigger "1.x"
 
-rc-tooltip@^3.4.2, rc-tooltip@~3.4.3, rc-tooltip@~3.4.6:
+rc-tooltip@^3.4.2, rc-tooltip@~3.4.3:
+  version "3.4.6"
+  resolved "https://registry.yarnpkg.com/rc-tooltip/-/rc-tooltip-3.4.6.tgz#ed98de2a7b412e527c6bd8a2a97dddf0babd2f21"
+  dependencies:
+    babel-runtime "^6.23.0"
+    prop-types "^15.5.8"
+    rc-trigger "1.x"
+
+rc-tooltip@~3.4.6:
   version "3.4.8"
   resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/rc-tooltip/-/rc-tooltip-3.4.8.tgz#4a422374f57f3b00f4d04941863850ceddd24c56"
   dependencies:
@@ -3469,9 +3555,9 @@ react-mixin@^3.0.5:
     object-assign "^4.0.1"
     smart-mixin "^2.0.0"
 
-react-native-camera-roll-picker@~1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-native-camera-roll-picker/-/react-native-camera-roll-picker-1.2.0.tgz#f479ad27e5b0962b9049bd16669de9b59f91df5c"
+react-native-camera-roll-picker@~1.1.6:
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/react-native-camera-roll-picker/-/react-native-camera-roll-picker-1.1.9.tgz#99bad3a9c117ad79e67044c420ce463ee18f29d3"
 
 react-native-collapsible@^0.8.0:
   version "0.8.0"
@@ -3731,6 +3817,10 @@ regenerator-runtime@^0.10.0:
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
+regenerator-runtime@^0.11.0:
+  version "0.11.0"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/regenerator-runtime/-/regenerator-runtime-0.11.0.tgz#7e54fe5b5ccd5d6624ea6255c3473be090b802e1"
+
 regenerator-runtime@^0.9.5:
   version "0.9.6"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.9.6.tgz#d33eb95d0d2001a4be39659707c51b0cb71ce029"
@@ -3873,25 +3963,25 @@ rimraf@~2.2.6:
   version "2.2.8"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
 
-rmc-cascader@~4.3.4:
-  version "4.3.4"
-  resolved "https://registry.yarnpkg.com/rmc-cascader/-/rmc-cascader-4.3.4.tgz#643ce891f692ad61f8ee04bc5be484f5ea7373a6"
+rmc-cascader@^4.1.1:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/rmc-cascader/-/rmc-cascader-4.2.3.tgz#43815de4758f6bb138e04baba1ad4d60c2ad72d1"
   dependencies:
     array-tree-filter "1.0.x"
     babel-runtime "6.x"
-    rmc-picker "^4.0.1"
+    rmc-picker "^3.9.3"
 
-rmc-date-picker@~5.5.0:
-  version "5.5.0"
-  resolved "https://registry.yarnpkg.com/rmc-date-picker/-/rmc-date-picker-5.5.0.tgz#00d16317eebba368c81524fcb23d9e05ac77dd89"
+rmc-date-picker@^5.3.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/rmc-date-picker/-/rmc-date-picker-5.4.1.tgz#57e42fceebdd37bbd80092402ded8d86550829a0"
   dependencies:
     babel-runtime "6.x"
     moment "2.x"
-    rmc-picker "^4.0.1"
+    rmc-picker "^3.8.0"
 
-rmc-list-view@~0.8.4:
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/rmc-list-view/-/rmc-list-view-0.8.6.tgz#ba65833a2592fff980277610d373557a2d15c23e"
+rmc-list-view@^0.8.0:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/rmc-list-view/-/rmc-list-view-0.8.3.tgz#65fc85f2de8ed69818e1db24cd8587f3f72034c7"
   dependencies:
     autobind-decorator "^1.3.3"
     babel-runtime "6.x"
@@ -3904,7 +3994,7 @@ rmc-list-view@~0.8.4:
     react-timer-mixin "^0.13.3"
     zscroller "~0.3.0"
 
-rmc-nuka-carousel@~2.2.0:
+rmc-nuka-carousel@^2.2.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/rmc-nuka-carousel/-/rmc-nuka-carousel-2.2.1.tgz#c4238193a298be128a2f13ecb5c26fd77ad00ccd"
   dependencies:
@@ -3913,9 +4003,9 @@ rmc-nuka-carousel@~2.2.0:
     kw-react-tween-state "^0.1.5"
     object-assign "^4.1.0"
 
-rmc-picker@^4.0.1, rmc-picker@~4.0.1:
-  version "4.0.4"
-  resolved "https://registry.yarnpkg.com/rmc-picker/-/rmc-picker-4.0.4.tgz#d77627f98be0497b022925314344f262f5ce8008"
+rmc-picker@^3.8.0, rmc-picker@^3.9.3:
+  version "3.10.7"
+  resolved "https://registry.yarnpkg.com/rmc-picker/-/rmc-picker-3.10.7.tgz#16d6761797c8fbd841c2382098b733bcf9f6ab90"
   dependencies:
     babel-runtime "6.x"
     classnames "2.x"
@@ -3993,9 +4083,13 @@ sax@~1.1.1:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.1.6.tgz#5d616be8a5e607d54e114afae55b7eaf2fcc3240"
 
-"semver@2 || 3 || 4 || 5", semver@5.x, semver@^5.0.3, semver@^5.1.0, semver@^5.3.0:
+"semver@2 || 3 || 4 || 5", semver@5.x, semver@^5.0.3, semver@^5.1.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
+
+semver@^5.3.0:
+  version "5.4.1"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/semver/-/semver-5.4.1.tgz#e059c09d8571f0540823733433505d3a2f00b18e"
 
 send@0.13.2:
   version "0.13.2"
@@ -4312,7 +4406,7 @@ tmpl@1.0.x:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/tmpl/-/tmpl-1.0.4.tgz#23640dd7b42d00433911140820e5cf440e521dd1"
 
-to-fast-properties@^1.0.1:
+to-fast-properties@^1.0.1, to-fast-properties@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/to-fast-properties/-/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
 
@@ -4483,13 +4577,13 @@ watch@~0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/watch/-/watch-0.10.0.tgz#77798b2da0f9910d595f1ace5b0c2258521f21dc"
 
-whatwg-fetch@>=0.10.0, whatwg-fetch@^2.0.3:
-  version "2.0.3"
-  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
-
-whatwg-fetch@^1.0.0:
+whatwg-fetch@>=0.10.0, whatwg-fetch@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-1.1.1.tgz#ac3c9d39f320c6dce5339969d054ef43dd333319"
+
+whatwg-fetch@^2.0.3:
+  version "2.0.3"
+  resolved "http://nexus-dev.quarkfinance.com:8081/repository/npm-group/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
 which-module@^1.0.0:
   version "1.0.0"

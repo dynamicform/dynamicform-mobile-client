@@ -114,13 +114,15 @@ export class QSwitch extends React.Component{
     render(){
         const value = this.getValue(this.props.formData);
         const {getFieldDecorator} =this.props.form;
-        return (
+        if (!this.isHidden) {
+            return (
                 <ListItem extra={
                     getFieldDecorator(this.dynamicKey, {
                         rules: this.Rules,
-                        initialValue:value
+                        initialValue: value
                     })(
                         <Switch checked={value}
+                                disabled={this.isDisabled}
                                 onChange={this.handleOnChange}
                                 platform="ios"
                         />
@@ -128,7 +130,12 @@ export class QSwitch extends React.Component{
                 }>
                     {this.state.label}
                 </ListItem>
-        );
+            );
+        }else{
+            return(
+                <List />
+            );
+        }
     }
 }
 export default connect(MapStateToProps)(QSwitch);
